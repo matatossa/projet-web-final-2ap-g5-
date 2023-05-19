@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="sing up.css">
+</head>
+
+<body>
+  <div class="container">
+    <div  class="form-header">  
+      <p class="form-title">Sign Up</p>
+      <input type="button" id="switch" onclick="toggleElements()" value="Switch to log in">
+    </div>
+    <div id="login" style="display: none;">
+      
+      <h1>Connexion</h1><br><br>
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <br><br>
+      <input type="password" id="loginPassword" placeholder="Mot de passe" required>
+      <br><br>
+      <button onclick="login()"class="glow-on-hover" type="button">Se connecter</button>
+    </div>
+
+    <div id="signup">
+      <centre><h1>Inscription</h1></centre><br><br>
+      <input type="email" id="email" placeholder="Email" required>
+      <br><br>
+      <input type="password" id="password" placeholder="Mot de passe" required>
+      <br><br>
+      <input type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" required>
+      <br><br>
+      <button onclick="signup()"class="glow-on-hover" type="button">S'inscrire</button>
+      
+    </div>
+  </div>
+
+  <script src="javas.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label, input {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cart Confirmation</h1>
+  
+  <div id="cart-items">
+    <!-- Display cart items here -->
+  </div>
+  
+  <form id="payment-form">
+    <label for="credit-card">Credit Card Number:</label>
+    <input type="text" id="credit-card" name="credit-card" required>
+    
+    <button type="submit">Confirm Payment</button>
+  </form>
+  
+  <script>
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form submission
+      
+      
+      var creditCardNumber = document.getElementById('credit-card').value;
+      
+     
+      var isValidCard = validateCreditCard(creditCardNumber);
+      
+      if (isValidCard) {
+        
+        alert('Payment successful! Thank you for your purchase.');
+        
+        // Reset the form
+        document.getElementById('credit-card').value = '';
+      } else {
+      
+        alert('Invalid credit card number. Please try again.');
+      }
+    });
+
+    function validateCreditCard(cardNumber) {
+      
+      var sanitizedCardNumber = cardNumber.replace(/[-\s]/g, '');
+      
+
+      if (sanitizedCardNumber.length === 8) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
